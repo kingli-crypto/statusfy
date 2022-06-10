@@ -12,13 +12,9 @@
           <p>{{ $t("notifications.description") }}</p>
 
           <span class="icon" @click="toggleModal">
-            <svgicon
-              role="button"
-              name="fortawesome/times-solid"
-              class="svg-inline--fa fa-w-16"
-            >
+            <FontAwesomeIcon icon="{faClock}" class="fa-w-16">
               <title>{{ $t("notifications.buttons.close") }}</title>
-            </svgicon>
+            </FontAwesomeIcon>
           </span>
         </div>
 
@@ -116,9 +112,10 @@
 </template>
 
 <script>
-import "./icons/fortawesome/times-solid";
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 export default {
+  components: { FontAwesomeIcon },
   data() {
     return {
       isModalActive: false,

@@ -48,10 +48,7 @@
 
     <div class="incident-subtitle">
       <div v-if="!incident.scheduled" class="status">
-        <svgicon
-          :name="`fortawesome/${status.icon}`"
-          class="svg-inline--fa fa-w-16"
-        />
+        <FontAwesomeIcon :icon="status.icon" class="fa-w-16" />
         {{ status.title }}
       </div>
 
@@ -87,29 +84,24 @@
     </div>
 
     <div class="hidden">
-      <svgicon
+      <FontAwesomeIcon
         ref="external-link-icon"
-        name="fortawesome/external-link-alt-solid"
-        class="svg-inline--fa fa-w-12 ml-1"
+        icon="external-link"
+        class="fa-w-12 ml-1"
       />
     </div>
   </div>
 </template>
 
 <script>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import NiceDate from "./NiceDate";
 import { getStatusInfo } from "~/helpers/statuses";
 
-import "./icons/fortawesome/clock-solid";
-import "./icons/fortawesome/exclamation-circle-solid";
-import "./icons/fortawesome/minus-circle-solid";
-import "./icons/fortawesome/times-circle-solid";
-import "./icons/fortawesome/check-circle-solid";
-import "./icons/fortawesome/external-link-alt-solid";
-
 export default {
   components: {
-    NiceDate
+    NiceDate,
+    FontAwesomeIcon
   },
   props: {
     incident: {
@@ -162,10 +154,10 @@ export default {
       const blockElements = this.$refs.content.querySelectorAll(
         ".update-block"
       );
-      const externalLinksElements = this.$refs.content.querySelectorAll(
-        "a.external"
-      );
-      const iconElement = this.$refs["external-link-icon"].$el;
+      // const externalLinksElements = this.$refs.content.querySelectorAll(
+      //   "a.external"
+      // );
+      // const iconElement = this.$refs["external-link-icon"].$el;
 
       blockElements.forEach((el, i) => {
         const dateEl = el.querySelectorAll(".update-block-date")[0];
@@ -178,9 +170,9 @@ export default {
         );
       });
 
-      externalLinksElements.forEach((el, i) => {
-        el.appendChild(iconElement);
-      });
+      // externalLinksElements.forEach((el, i) => {
+      //   el.appendChild(iconElement);
+      // });
     }
   },
   methods: {

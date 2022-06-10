@@ -10,10 +10,7 @@
     <div :class="status.key" class="global-status flex justify-center">
       <span>{{ status.title }}</span>
       <span class="global-status-icon">
-        <svgicon
-          :name="`fortawesome/${status.icon}`"
-          class="svg-inline--fa fa-w-16"
-        />
+        <FontAwesomeIcon :icon="status.icon" class="fa-w-16" />
       </span>
     </div>
 
@@ -38,6 +35,7 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import { statusesInfo } from "~/helpers/statuses";
 import API from "~/helpers/api";
 
@@ -45,18 +43,13 @@ import IncidentsTimeline from "~/components/IncidentsTimeline";
 import SystemStatus from "~/components/SystemStatus";
 import Scheduled from "~/components/Scheduled";
 
-import "~/components/icons/fortawesome/clock-solid";
-import "~/components/icons/fortawesome/exclamation-circle-solid";
-import "~/components/icons/fortawesome/minus-circle-solid";
-import "~/components/icons/fortawesome/times-circle-solid";
-import "~/components/icons/fortawesome/check-circle-solid";
-
 export default {
   layout: "home",
   components: {
     IncidentsTimeline,
     SystemStatus,
-    Scheduled
+    Scheduled,
+    FontAwesomeIcon
   },
   async asyncData({ app }) {
     const api = new API(app.$axios, app.i18n.locale);

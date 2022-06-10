@@ -17,10 +17,7 @@
           class="hidden sm:inline"
         >
           <span class="system-title-info">
-            <svgicon
-              name="fortawesome/question-circle-regular"
-              class="ml-1 svg-inline--fa fa-w-16"
-            />
+            <FontAwesomeIcon icon="circle-question" class="fa-w-16" />
           </span>
 
           <template slot="popover">
@@ -30,10 +27,7 @@
       </div>
       <div class="system-status">
         <span class="hidden sm:inline">{{ status.title }}</span>
-        <svgicon
-          :name="`fortawesome/${status.icon}`"
-          class="svg-inline--fa fa-w-16"
-        />
+        <FontAwesomeIcon :icon="status.icon" class="fa-w-16" />
       </div>
     </div>
 
@@ -48,23 +42,15 @@
 </template>
 
 <script>
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import SystemChild from "./SystemChild";
 import { getStatusInfo } from "~/helpers/statuses";
-
-import "./icons/fortawesome/question-circle-regular";
-
-import "./icons/fortawesome/clock-solid";
-import "./icons/fortawesome/exclamation-circle-solid";
-import "./icons/fortawesome/minus-circle-solid";
-import "./icons/fortawesome/times-circle-solid";
-import "./icons/fortawesome/check-circle-solid";
-import "./icons/fortawesome/chevron-left-solid";
-import "./icons/fortawesome/chevron-right-solid";
 
 export default {
   components: {
     "v-popover": () => import("v-tooltip").then(({ VPopover }) => VPopover),
-    system: SystemChild
+    system: SystemChild,
+    FontAwesomeIcon
   },
   props: {
     system: {

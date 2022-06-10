@@ -8,11 +8,6 @@
 
 <script>
 import System from "./System";
-import "./icons/fortawesome/clock-solid";
-import "./icons/fortawesome/exclamation-circle-solid";
-import "./icons/fortawesome/minus-circle-solid";
-import "./icons/fortawesome/times-circle-solid";
-import "./icons/fortawesome/check-circle-solid";
 
 export default {
   components: {

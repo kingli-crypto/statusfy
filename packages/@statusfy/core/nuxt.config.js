@@ -48,11 +48,17 @@ const config = {
    */
   loading: { color: mainColor },
 
+  // https://fontawesome.com/docs/web/use-with/vue/use-with#purgecss
+  purgeCSS: {
+    whitelistPatterns: [/svg.*/, /fa.*/]
+  },
+
   /*
    ** Global CSS
    */
   css: [
     "~assets/css/tailwind.css",
+    "@fortawesome/fontawesome-svg-core/styles.css",
     "@fortawesome/fontawesome-svg-core/styles.css"
   ],
 
@@ -66,7 +72,7 @@ const config = {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ["~/plugins/axios", "~/plugins/vue-svgicon"],
+  plugins: ["~/plugins/axios", "~/plugins/fontawesome.js"],
 
   /*
    ** Nuxt.js modules

@@ -17,11 +17,11 @@ export const statusesInfo = $t => {
   }
 
   const icons = {
-    "under-maintenance": "clock-solid",
-    "degraded-performance": "exclamation-circle-solid",
-    "partial-outage": "minus-circle-solid",
-    "major-outage": "times-circle-solid",
-    operational: "check-circle-solid"
+    "under-maintenance": "clock",
+    "degraded-performance": "circle-exclamation",
+    "partial-outage": "circle-minus",
+    "major-outage": "circle-xmark",
+    operational: "circle-check"
   };
 
   return {
