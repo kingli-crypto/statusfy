@@ -19,7 +19,7 @@ module.exports = {
   ],
   content: {
     frontMatterFormat: "yaml",
-    systems: ["cdn", "conversions", "site-delivery", "api"]
+    systems: ["cdn", "conversions", "site-delivery", "api", {"name": "fruit", "items": ["apple", "orange"]}]
   },
   head: {
     link: [

@@ -20,6 +20,9 @@
   },
   "license": "Apache-2.0",
   "dependencies": {
+    "babel-plugin-polyfill-corejs2": "^0.3.1",
+    "babel-plugin-polyfill-corejs3": "^0.5.2",
+    "babel-plugin-polyfill-regenerator": "^0.3.1",
     "statusfy": "0.5.0"
   },
   "devDependencies": {

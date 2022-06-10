@@ -16,6 +16,15 @@
       "api": {
         "title": "API",
         "description": "The API Endpoints any developers can access to"
+      },
+      "fruit": {
+        "title": "Fruit"
+      },
+      "apple": {
+        "title": "Apple"
+      },
+      "orange": {
+        "title": "Orange"
       }
     }
   }

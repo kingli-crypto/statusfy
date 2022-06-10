@@ -299,7 +299,6 @@ module.exports = async function database(siteConfig, finalDate) {
       return incidents[lang].filter(i => i.id === id)[0];
     },
     systems(lang) {
-      const systems = [];
       // Important order of relevance
       const systemSeverities = [
         "under-maintenance",
@@ -309,8 +308,23 @@ module.exports = async function database(siteConfig, finalDate) {
       ];
       let order = 1;
 
-      siteConfig.content.systems.forEach(system => {
-        const currentSystem = { name: system, status: "operational", order };
+      function processSystem(system) {
+        let currentSystem;
+        if (typeof system === "string") {
+          currentSystem = {
+            name: system,
+            status: "operational",
+            order,
+            items: []
+          };
+        } else {
+          currentSystem = {
+            name: system.name,
+            status: "operational",
+            order,
+            items: system.items.map(processSystem)
+          };
+        }
 
         // eslint-disable-next-line no-unused-vars
         for (const severity of systemSeverities) {
@@ -327,11 +341,11 @@ module.exports = async function database(siteConfig, finalDate) {
           }
         }
 
-        systems.push(currentSystem);
         order++;
-      });
+        return currentSystem;
+      }
 
-      return systems;
+      return siteConfig.content.systems.map(processSystem);
     },
     scheduled(lang) {
       const sortedScheduled = sortScheduled(scheduled[lang]);

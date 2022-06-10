@@ -35,7 +35,7 @@ main {
 .scheduled-container {
   @apply mt-6;
 
-  > h2 {
+  >h2 {
     @apply text-2xl mb-4 font-medium;
   }
 }
@@ -273,8 +273,9 @@ main {
 }
 
 .incident-body {
-  > p,
-  > div {
+
+  >p,
+  >div {
     @apply my-4;
   }
 
@@ -429,10 +430,10 @@ main {
     @apply flex flex-col items-center justify-between py-4;
     color: var(--grey-dark);
 
-    > div {
+    >div {
       @apply my-2;
 
-      > a:not(:last-child) {
+      >a:not(:last-child) {
         @apply mr-4;
       }
     }
@@ -510,7 +511,7 @@ main {
           @apply flex-row;
         }
 
-        > span {
+        >span {
           color: var(--grey-dark);
 
           @apply flex-1 text-center font-medium py-3 cursor-pointer;
@@ -534,7 +535,7 @@ main {
       .tabs-container {
         @apply flex flex-col items-center py-6;
 
-        > div {
+        >div {
           @apply flex flex-col items-center py-6 text-center;
 
           p {
@@ -548,7 +549,7 @@ main {
       @apply my-4 px-4;
 
       h1 {
-        @apply text-left  font-medium text-2xl mb-4;
+        @apply text-left font-medium text-2xl mb-4;
 
         @screen md {
           @apply text-center;
