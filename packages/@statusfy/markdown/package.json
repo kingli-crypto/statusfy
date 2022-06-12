@@ -1,6 +1,6 @@
 {
   "name": "@statusfy/markdown",
-  "version": "0.7.0-alpha.0",
+  "version": "0.7.3-alpha.0",
   "description": "Markdown Parser for Statusfy",
   "main": "index.js",
   "publishConfig": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/bazzite/statusfy#readme",
   "dependencies": {
-    "@statusfy/common": "^0.7.0-alpha.0",
+    "@statusfy/common": "^0.7.3-alpha.0",
     "markdown-it": "10.0.0",
     "markdown-it-container": "2.0.0",
     "markdown-it-emoji": "1.4.0"
