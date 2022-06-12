@@ -1,6 +1,9 @@
 <template>
-  <div :class="system.status" class="system flex flex-row justify-between">
-    <div class="system-title" style="margin-left: 3rem">
+  <div
+    :class="system.status"
+    class="system child flex flex-row justify-between"
+  >
+    <div class="system-title" style="margin-left: 2rem">
       {{ $t(`systems.items.${system.name}.title`) }}
 
       <v-popover
@@ -11,7 +14,7 @@
         class="hidden sm:inline"
       >
         <span class="system-title-info">
-          <FontAwesomeIcon icon="circle-question" class="fa-w-16" />
+          <FontAwesomeIcon :icon="['far', 'circle-question']" class="fa-w-16" />
         </span>
 
         <template slot="popover">

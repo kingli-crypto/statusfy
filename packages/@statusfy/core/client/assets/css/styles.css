@@ -572,3 +572,17 @@ main {
     }
   }
 }
+
+
+.system {
+  border-color: var(--grey);
+}
+
+
+.system:hover {
+  background-color: var(--grey-lightest);
+}
+
+.system.child {
+  border-left-width: 1rem;
+}

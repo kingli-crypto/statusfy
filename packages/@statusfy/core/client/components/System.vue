@@ -1,12 +1,24 @@
 <template>
   <div>
     <div
-      :class="system.status"
+      :class="[
+        system.status,
+        has_children ? 'has_children' : '',
+        show_children ? 'open' : 'close'
+      ]"
       class="system flex flex-row justify-between"
-      :style="{ cursor: pointer }"
+      :style="{ cursor: has_children ? 'pointer' : 'auto' }"
       @click="show_children = !show_children"
     >
       <div class="system-title">
+        <FontAwesomeIcon
+          v-show="has_children && !show_children"
+          :icon="['far', 'plus-square']"
+        />
+        <FontAwesomeIcon
+          v-show="has_children && show_children"
+          :icon="['far', 'minus-square']"
+        />
         {{ $t(`systems.items.${system.name}.title`) }}
 
         <v-popover
@@ -17,7 +29,10 @@
           class="hidden sm:inline"
         >
           <span class="system-title-info">
-            <FontAwesomeIcon icon="circle-question" class="fa-w-16" />
+            <FontAwesomeIcon
+              :icon="['far', 'circle-question']"
+              class="fa-w-16"
+            />
           </span>
 
           <template slot="popover">
@@ -25,6 +40,7 @@
           </template>
         </v-popover>
       </div>
+
       <div class="system-status">
         <span class="hidden sm:inline">{{ status.title }}</span>
         <FontAwesomeIcon :icon="status.icon" class="fa-w-16" />
@@ -32,8 +48,12 @@
     </div>
 
     <Transition name="slide-fade">
-      <ul v-show="show_children" class="list-reset">
-        <li v-for="item in system.items" :key="item.name">
+      <ul class="list-reset">
+        <li
+          v-for="item in system.items"
+          v-show="show_children || !item.ok"
+          :key="item.name"
+        >
           <system :system="item" />
         </li>
       </ul>
@@ -78,8 +98,8 @@ export default {
 
       return getStatusInfo($t, this.system.status);
     },
-    pointer() {
-      return this.system.items.length > 0 ? "pointer" : "auto";
+    has_children() {
+      return this.system.items.length > 0;
     }
   }
 };

@@ -3,7 +3,8 @@
     "api",
     "cdn",
     "conversions",
-    "site-delivery"
+    "site-delivery",
+    "apple"
   ],
   "content": {
     "en": [

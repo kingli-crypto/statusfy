@@ -3,13 +3,18 @@ import { library, config } from "@fortawesome/fontawesome-svg-core";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 import {
   faClock,
+  faExternalLink,
   faCircleExclamation,
   faCircleMinus,
   faCircleXmark,
-  faCircleCheck,
-  faCircleQuestion,
-  faExternalLink
+  faCircleCheck
 } from "@fortawesome/free-solid-svg-icons";
+
+import {
+  faPlusSquare,
+  faMinusSquare,
+  faCircleQuestion
+} from "@fortawesome/free-regular-svg-icons";
 
 // This is important, we are going to let Nuxt.js worry about the CSS
 config.autoAddCss = false;
@@ -24,7 +29,9 @@ library.add(
   faCircleXmark,
   faCircleCheck,
   faCircleQuestion,
-  faExternalLink
+  faExternalLink,
+  faPlusSquare,
+  faMinusSquare
 );
 
 // Register the component globally

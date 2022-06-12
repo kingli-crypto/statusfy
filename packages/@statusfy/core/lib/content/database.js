@@ -315,14 +315,16 @@ module.exports = async function database(siteConfig, finalDate) {
             name: system,
             status: "operational",
             order,
-            items: []
+            items: [],
+            ok: true
           };
         } else {
           currentSystem = {
             name: system.name,
             status: "operational",
             order,
-            items: system.items.map(processSystem)
+            items: system.items.map(processSystem),
+            ok: true
           };
         }
 
@@ -337,6 +339,7 @@ module.exports = async function database(siteConfig, finalDate) {
 
           if (unresolved > 0) {
             currentSystem.status = severity;
+            currentSystem.ok = false;
             break;
           }
         }
