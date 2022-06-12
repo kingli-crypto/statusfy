@@ -332,7 +332,7 @@ module.exports = async function database(siteConfig, finalDate) {
         for (const severity of systemSeverities) {
           const unresolved = incidents[lang].filter(
             incident =>
-              incident.affectedsystems.includes(system) &&
+              incident.affectedsystems.includes(currentSystem.name) &&
               incident.severity === severity &&
               incident.resolved === false
           ).length;
