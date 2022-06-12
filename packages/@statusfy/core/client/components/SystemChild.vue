@@ -3,7 +3,7 @@
     :class="system.status"
     class="system child flex flex-row justify-between"
   >
-    <div class="system-title" style="margin-left: 2rem">
+    <div class="system-title">
       {{ $t(`systems.items.${system.name}.title`) }}
 
       <v-popover
