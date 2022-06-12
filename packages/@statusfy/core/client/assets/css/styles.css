@@ -32,7 +32,8 @@ main {
 }
 
 .timeline-container,
-.scheduled-container {
+.scheduled-container,
+.status-container {
   @apply mt-6;
 
   >h2 {

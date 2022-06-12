@@ -17,6 +17,9 @@ module.exports = {
   theme: {
     scheduled: {
       position: "belowSystems" // or aboveSystems, aboveGlobalStatus
+    },
+    globalStatus: {
+      show: true
     }
   },
   notifications: {

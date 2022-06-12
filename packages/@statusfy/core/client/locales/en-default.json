@@ -14,7 +14,8 @@
     "degraded-performance": "Degraded Performance",
     "partial-outage": "Partial Outage",
     "major-outage": "Major Outage",
-    "operational": "Operational"
+    "operational": "Operational",
+    "title": "System Status"
   },
   "dates": {
     "formats": {

@@ -6,12 +6,19 @@
       :data="scheduled"
     />
 
-    <!-- Global Status -->
-    <div :class="status.key" class="global-status flex justify-center">
-      <span>{{ status.title }}</span>
-      <span class="global-status-icon">
-        <FontAwesomeIcon :icon="status.icon" class="fa-w-16" />
-      </span>
+    <div class="status-container">
+      <h2>{{ $t("statuses.title") }}</h2>
+      <!-- Global Status -->
+      <div
+        v-if="$statusfy.theme.globalStatus.show === true"
+        :class="status.key"
+        class="global-status flex justify-center"
+      >
+        <span>{{ status.title }}</span>
+        <span class="global-status-icon">
+          <FontAwesomeIcon :icon="status.icon" class="fa-w-16" />
+        </span>
+      </div>
     </div>
 
     <!-- Scheduled: Above the Systems -->
